@@ -1,5 +1,7 @@
 import Sketch from "react-p5";
 
+let slider;
+
 const Buckets = () => {
   let randomCounts = [];
   let total = 200;
@@ -12,16 +14,23 @@ const Buckets = () => {
     for (let i = 0; i < total; i++) {
       randomCounts[i] = 0;
     }
+    slider = p5.createSlider(0, 2, 1, 0.01);
+    slider.parent(canvasParentRef);
+    slider.input(() => {
+      p5.background(255);
+      for (let i = 0; i < total; i++) {
+        randomCounts[i] = 0;
+      }
+      p5.redraw();
+    });
   };
 
   // Draw function to render the sketch
   const draw = (p5) => {
-    let index = p5.floor(
-      p5.randomGaussian(
-        randomCounts.length / 2,
-        randomCounts.length / (5.3333 * 2)
-      )
-    );
+    const sliderVal = slider.value();
+    const baseStdDev = total / 4;
+    const stdDev = baseStdDev * sliderVal;
+    let index = p5.floor(p5.randomGaussian(randomCounts.length / 2, stdDev));
     randomCounts[index]++;
     p5.stroke(0);
     p5.fill(127);

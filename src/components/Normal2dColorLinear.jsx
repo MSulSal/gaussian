@@ -1,5 +1,6 @@
 import Sketch from "react-p5";
 
+let slider;
 let canvasWidth, canvasHeight;
 
 const Normal2DColorLinear = () => {
@@ -9,11 +10,20 @@ const Normal2DColorLinear = () => {
     canvasHeight = canvasWidth;
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
     p5.background(255);
+    slider = p5.createSlider(0, 2, 1, 0.01);
+    slider.parent(canvasParentRef);
+    slider.input(() => {
+      p5.background(255);
+      p5.redraw();
+    });
   };
 
   // Draw function to render the sketch
   const draw = (p5) => {
-    let x = p5.randomGaussian(p5.width / 2, p5.width / (5.3333 * 2));
+    const sliderVal = slider.value();
+    const baseStdDev = p5.width / 4;
+    const stdDev = baseStdDev * sliderVal;
+    let x = p5.randomGaussian(p5.width / 2, stdDev);
     let y = p5.random(p5.height);
     p5.noStroke();
     p5.fill(
