@@ -30,7 +30,10 @@ const BucketsColor = () => {
     const sliderVal = slider.value();
     const baseStdDev = total / 4;
     const stdDev = baseStdDev * sliderVal;
-    let index = p5.floor(p5.randomGaussian(total / 2, stdDev));
+    let index;
+    do {
+      index = p5.floor(p5.randomGaussian(randomCounts.length / 2, stdDev));
+    } while (index < 0 || index >= randomCounts.length);
     randomCounts[index]++;
     p5.noStroke();
 
