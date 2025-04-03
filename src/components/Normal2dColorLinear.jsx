@@ -30,7 +30,7 @@ const Normal2DColorLinear = () => {
       (x / p5.width) * 255,
       0,
       255 - (x / p5.width) * 255,
-      (x / p5.width) * 100
+      100 - (p5.abs(x - p5.width / 2) / (p5.width / 2)) * 100
     );
     p5.circle(x, y, 16);
   };
