@@ -4,6 +4,7 @@ import Normal2D from "./components/Normal2D";
 import Buckets from "./components/Buckets";
 import BucketsColor from "./components/BucketsColor";
 import Normal2DColorRadial from "./components/Normal2DColorRadial";
+import Normal2DColorLinear from "./components/Normal2dColorLinear";
 
 const App = () => {
   return (
@@ -28,6 +29,10 @@ const App = () => {
       <div className="canvas-container">
         <p>Gaussian Distribution in 2D, Radial Gradient</p>
         <Normal2DColorRadial />
+      </div>
+      <div className="canvas-container">
+        <p>Gaussian Distribution in 2D, Linear Gradient</p>
+        <Normal2DColorLinear />
       </div>
     </div>
   );
