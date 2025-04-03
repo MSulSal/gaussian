@@ -9,14 +9,6 @@ const Normal2D = () => {
     p5.background(255);
   };
 
-  //   // When the window is resized, recalculate the width and height.
-  //   const windowResized = (p5) => {
-  //     const canvasParent = p5.canvas.parentNode;
-  //     const newWidth = canvasParent.offsetWidth;
-  //     const newHeight = newWidth;
-  //     p5.resizeCanvas(newWidth, newHeight);
-  //   };
-
   // Draw function to render the sketch
   const draw = (p5) => {
     let x = p5.randomGaussian(p5.width / 2, p5.width / (5.3333 * 2));
