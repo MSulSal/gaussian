@@ -2,7 +2,7 @@ import Sketch from "react-p5";
 
 const Buckets = () => {
   let randomCounts = [];
-  let total = 20;
+  let total = 200;
   // In setup, use the parent container’s width and set height proportional to width.
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
