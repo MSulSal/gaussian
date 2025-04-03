@@ -2,6 +2,7 @@ import React from "react";
 import Normal1D from "./components/Normal1D";
 import Normal2D from "./components/Normal2D";
 import Buckets from "./components/Buckets";
+import BucketsColor from "./components/BucketsColor";
 
 const App = () => {
   return (
@@ -10,6 +11,10 @@ const App = () => {
       <div className="canvas-container">
         <p>Gaussian Distribution Buckets</p>
         <Buckets />
+      </div>
+      <div className="canvas-container">
+        <p>Gaussian Distribution Buckets with Color Gradient</p>
+        <BucketsColor />
       </div>
       <div className="canvas-container">
         <p>Gaussian Distribution in 1D</p>
