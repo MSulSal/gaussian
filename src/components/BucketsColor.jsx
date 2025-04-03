@@ -23,7 +23,7 @@ const BucketsColor = () => {
       )
     );
     randomCounts[index]++;
-    p5.stroke(0);
+    p5.noStroke();
 
     let w = p5.width / randomCounts.length;
 
