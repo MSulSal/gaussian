@@ -8,7 +8,7 @@ const App = () => {
     <div className="App">
       <h1>Gaussian Distributions</h1>
       <div className="canvas-container">
-        <p>Random Gaussian Distribution</p>
+        <p>Gaussian Distribution Buckets</p>
         <Buckets />
       </div>
       <div className="canvas-container">
