@@ -9,6 +9,10 @@ const Normal1D = () => {
     const canvasHeight = canvasWidth * 0.5; // 50% of width (adjust as needed)
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
     p5.background(255);
+    const label = p5.createDiv("Standard Deviation:");
+    label.style("font-size", "16px");
+    label.style("margin-top", "10px");
+    label.parent(canvasParentRef);
     slider = p5.createSlider(0, 2, 0.5, 0.01);
     slider.parent(canvasParentRef);
     slider.input(() => {

@@ -14,6 +14,10 @@ const Buckets = () => {
     for (let i = 0; i < total; i++) {
       randomCounts[i] = 0;
     }
+    const label = p5.createDiv("Standard Deviation:");
+    label.style("font-size", "16px");
+    label.style("margin-top", "10px");
+    label.parent(canvasParentRef);
     slider = p5.createSlider(0, 2, 1, 0.01);
     slider.parent(canvasParentRef);
     slider.input(() => {
