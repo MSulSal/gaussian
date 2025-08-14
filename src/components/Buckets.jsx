@@ -4,12 +4,11 @@ let slider;
 
 const Buckets = () => {
   let randomCounts = [];
-  let total = 200;
+  let total = 50;
   // In setup, use the parent container’s width and set height proportional to width.
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
     const canvasHeight = canvasWidth * 0.5; // 50% of width (adjust as needed)
-    p5.background(255);
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
     for (let i = 0; i < total; i++) {
       randomCounts[i] = 0;
@@ -21,7 +20,7 @@ const Buckets = () => {
     slider = p5.createSlider(0, 2, 1, 0.01);
     slider.parent(canvasParentRef);
     slider.input(() => {
-      p5.background(255);
+      p5.background(0);
       for (let i = 0; i < total; i++) {
         randomCounts[i] = 0;
       }
@@ -40,7 +39,7 @@ const Buckets = () => {
     } while (index < 0 || index >= randomCounts.length);
     randomCounts[index]++;
     p5.stroke(0);
-    p5.fill(127);
+    p5.fill(0, 255, 0);
     let w = p5.width / randomCounts.length;
 
     for (let x = 0; x < randomCounts.length; x++) {

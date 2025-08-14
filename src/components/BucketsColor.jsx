@@ -4,7 +4,7 @@ let slider;
 
 const BucketsColor = () => {
   let randomCounts = [];
-  let total = 100;
+  let total = 50;
   // In setup, use the parent container’s width and set height proportional to width.
   const setup = (p5, canvasParentRef) => {
     const canvasWidth = canvasParentRef.offsetWidth;
@@ -21,7 +21,7 @@ const BucketsColor = () => {
     slider = p5.createSlider(0, 2, 1, 0.01);
     slider.parent(canvasParentRef);
     slider.input(() => {
-      p5.background(255);
+      p5.background(0);
       for (let i = 0; i < total; i++) {
         randomCounts[i] = 0;
       }

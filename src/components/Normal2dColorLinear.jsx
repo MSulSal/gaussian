@@ -9,7 +9,7 @@ const Normal2DColorLinear = () => {
     canvasWidth = canvasParentRef.offsetWidth;
     canvasHeight = canvasWidth;
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
-    p5.background(255);
+    p5.background(0);
     const label = p5.createDiv("Standard Deviation:");
     label.style("font-size", "16px");
     label.style("margin-top", "10px");
@@ -17,7 +17,7 @@ const Normal2DColorLinear = () => {
     slider = p5.createSlider(0, 2, 1, 0.01);
     slider.parent(canvasParentRef);
     slider.input(() => {
-      p5.background(255);
+      p5.background(0);
       p5.redraw();
     });
   };

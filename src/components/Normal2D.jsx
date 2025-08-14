@@ -8,7 +8,7 @@ const Normal2D = () => {
     const canvasWidth = canvasParentRef.offsetWidth;
     const canvasHeight = canvasWidth;
     p5.createCanvas(canvasWidth, canvasHeight).parent(canvasParentRef);
-    p5.background(255);
+    p5.background(0);
     const label = p5.createDiv("Standard Deviation:");
     label.style("font-size", "16px");
     label.style("margin-top", "10px");
@@ -16,7 +16,7 @@ const Normal2D = () => {
     slider = p5.createSlider(0, 2, 1, 0.01);
     slider.parent(canvasParentRef);
     slider.input(() => {
-      p5.background(255);
+      p5.background(0);
       p5.redraw();
     });
   };
@@ -30,7 +30,7 @@ const Normal2D = () => {
     let y = p5.randomGaussian(p5.width / 2, stdDev);
 
     p5.noStroke();
-    p5.fill(0, 10);
+    p5.fill(0, 255, 0, 10);
     p5.circle(x, y, 16);
   };
 
